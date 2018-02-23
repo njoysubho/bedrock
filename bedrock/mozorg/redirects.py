@@ -220,9 +220,8 @@ redirectpatterns = (
     redirect(r'^legal/amendment(\.html|/)?', 'foundation.documents.articles-of-incorporation-amendment'),
     redirect(r'^legal/bylaws(\.html|/)?', 'foundation.documents.bylaws'),
 
-    # bug 960689, 1013349, 896474
+    # bug 960689, 896474
     redirect(r'^about/legal\.html', 'legal.index'),
-    redirect(r'^about/partnerships\.html', 'mozorg.partnerships'),
 
     # Bug 1073269 /dnt/ -> /firefox/dnt/
     redirect(r'^dnt/?$', 'firefox.dnt'),
@@ -577,9 +576,6 @@ redirectpatterns = (
     # bug 1236910
     redirect(r'^support(/.*)?$', 'https://support.mozilla.org/'),
 
-    # bug 1233015
-    redirect(r'^about/partnerships/contentservices(/.*)?$', 'mozorg.partnerships'),
-
     # Bug 1235853
     redirect(r'^facebookapps(/.*)?$', 'firefox.new'),
 
@@ -663,4 +659,10 @@ redirectpatterns = (
     # Bug 1438464
     redirect(r'^collusion/?$', 'https://addons.mozilla.org/firefox/addon/lightbeam/'),
     redirect(r'^lightbeam(/.*)?', 'https://addons.mozilla.org/firefox/addon/lightbeam/'),
+
+    # Bug 1422080, 1013349, 1233015
+    redirect(r'^about/partnerships/?$', 'mozorg.contact.contact-landing'),
+    redirect(r'^about/partnerships/contentservices(/.*)?$', 'mozorg.contact.contact-landing'),
+    redirect(r'^about/partnerships\.html', 'mozorg.contact.contact-landing'),
+
 )
